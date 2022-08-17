@@ -1,0 +1,33 @@
+<!-- Inheriting the layout template. This is called template inheritance -->
+{% extends "layout.html" %}  
+<!-- overriding the 'content' block -->
+{% block content %}
+<div class="row">
+	<div class="col-md-8">
+		{% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for msg in messages %}
+                    {{msg}}
+                {% endfor %}
+            {% endif %}
+         {% endwith %}
+		<h1>About Sharp Portfolio</h1>
+		<p>
+			This project is a web implementation of Harry Markowitz's <a href="https://en.wikipedia.org/wiki/Markowitz_model">Portfolio Theory</a>. The tool fetches historical stock data from <a href="https://finance.yahoo.com/">Yahoo! Finance</a> and uses satistical methods of mean and variance to calculate the most optimal risk-adjusted portfolio distribution that lies on the <a href="https://en.wikipedia.org/wiki/Efficient_frontier">efficient frontier</a>.
+			<br>
+			<p>
+			The application is built with Flask framework for the backend and uses basic HTML, CSS & Bootstrap for the front end. Data is stored in a MongoDB database. Project implementation can be found at <a href="https://github.com/debjitl45/Portfolio-Optimizer">GitHub</a>.
+			</p>
+
+			<h3>What's with the name?</h3>
+			To <i>sharpen</i> your portfolio, the algorithm behind this application generates 10000 different portfolio distributions and then picks the one from the efficient frontier which has the maximum <a href="https://en.wikipedia.org/wiki/Sharpe_ratio">Sharpe Ratio</a> - a performance measure for investments developed by William F. Sharpe. <br>
+			Hence the name <i>Sharp Portfolio</i>!
+			<br>
+			<hr>
+			<h3>About the creator</h3>
+			Created by Debjit and team for Hackathon.
+			Feel free to connect with me via <a href="https://www.linkedin.com/in/debjitkarmakar/">LinkedIn</a> or email me at: karmadebjit@gmail.com
+		</p>
+	</div>
+</div>
+{% endblock content %}
