@@ -1,9 +1,13 @@
 /*Custom css styles*/
 
 body {
-
-    background: rgba(0, 0, 0, 0.5);
     background-image: url(bg.jpg);
+    content: "";
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100%;   
+    z-index: -1;
     color: #ffffff;
     margin-top: 5rem;
   }
@@ -92,4 +96,11 @@ body {
       border-collapse: separate;
       color: rgb(255, 255, 255);
       border-spacing: 0 1em;
+  }
+
+  main
+  {
+    position: relative;
+    z-index: 1;
+    background: rgb(0,0,0,0.5);
   }
